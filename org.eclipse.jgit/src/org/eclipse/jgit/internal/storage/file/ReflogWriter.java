@@ -191,8 +191,6 @@ public class ReflogWriter {
 		PersonIdent ident = update.getRefLogIdent();
 		if (ident == null)
 			ident = new PersonIdent(refdb.getRepository());
-		else
-			ident = new PersonIdent(ident);
 
 		byte[] rec = encode(oldId, newId, ident, msg);
 		if (deref && ref.isSymbolic()) {
